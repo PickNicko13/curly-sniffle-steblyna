@@ -1,0 +1,23 @@
+
+
+name: task1
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-bash:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Make script executable
+        run: chmod +x script.sh
+
+      - name: Run script.sh
+        run: ./task1.sh
+
